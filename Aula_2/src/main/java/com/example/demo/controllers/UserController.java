@@ -24,6 +24,11 @@ public class UserController {
 		return userRepository.save(user);
 	}
 	
+	@RequestMapping(method = RequestMethod.POST, path = "/createWithPosts")
+	public @ResponseBody User addUserWithPosts(@RequestBody User user) {
+		return userRepository.save(user);
+	}
+	
 	@RequestMapping(method = RequestMethod.GET, path = "/read")
 	public @ResponseBody Iterable<User> getAllUsers() {
 		System.out.println("oi");
